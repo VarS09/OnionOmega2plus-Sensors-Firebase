@@ -11,7 +11,12 @@ firebase=firebase.FirebaseApplication('<YOUR_PROJECT_URL>',authentication)
 user = authentication.get_user()
 
 #Initializing Flame sensor
-gpio0=onionGpio.OnionGpio(0)
+gpio0=onionGpio.OnionGpio(0) #Connected IR flame sensor to gpio 0
+status=gpio0.setInputDirection()
+initialvalue=gpio0.getValue()
+
+#Initializing MQ9 sensor
+gpio11=onionGpio.OnionGpio(11) #Connected MQ9 sensor to gpio 11
 status=gpio0.setInputDirection()
 initialvalue=gpio0.getValue()
 
@@ -41,6 +46,18 @@ while(1):
 			result3=firebase.put('/sensor data','checkfire','-1')
 		
 		print(result3) #Just to verify
+		
+		#Fetching MQ9 sensor data and pushing it to firebase
+        	value=gpio11.getValue()
+        	if value!=initialvalue:
+			print('1') #Just to verify
+			result4=firebase.put('/sensor data','check_hazardous_gas','1')
+		else:
+			print('-1') #Just to verify
+			result4=firebase.put('/sensor data','check_hazardous_gas','-1')
+		
+		print(result4) #Just to verify
+		
 		time.sleep(5)
 		
 	except KeyboardInterrupt:
