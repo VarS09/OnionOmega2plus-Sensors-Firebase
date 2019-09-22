@@ -17,8 +17,8 @@ initialvalue=gpio0.getValue()
 
 #Initializing MQ9 sensor
 gpio11=onionGpio.OnionGpio(11) #Connected MQ9 sensor to gpio 11
-status=gpio0.setInputDirection()
-initialvalue=gpio0.getValue()
+status=gpio11.setInputDirection()
+initialvalue1=gpio11.getValue()
 
 #Loop to sense data indefinitely
 while(1):
@@ -48,8 +48,8 @@ while(1):
 		print(result3) #Just to verify
 		
 		#Fetching MQ9 sensor data and pushing it to firebase
-        	value=gpio11.getValue()
-        	if value!=initialvalue:
+        	value1=gpio11.getValue()
+        	if value1!=initialvalue1:
 			print('1') #Just to verify
 			result4=firebase.put('/sensor data','check_hazardous_gas','1')
 		else:
