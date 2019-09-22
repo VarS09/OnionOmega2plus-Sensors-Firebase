@@ -36,4 +36,6 @@ When you run the script and the authentication to the Firebase database is compl
 
 The values are updated accordingly in your Firebase database almost concurrently in the respective nodes on your Firebase database console representing each environmental parameter pertaining to the interfaced sensors.
 
-The values will be updated periodically in the respective nodes by the omega with the data from the interfaced sensors.
+![Firebase Console](https://user-images.githubusercontent.com/34755328/65387198-6276d800-dd62-11e9-832a-15cb33877d9d.PNG)
+
+The values will be updated periodically in the respective nodes by the Omega with the data from the interfaced sensors.
