@@ -3,11 +3,14 @@ Onion Omega 2+ is a single board computer that  runs OnionOS that is based on Op
 ## Hardware Requirements
 * Onion omega 2+
 * Expansion dock (which is optional, as the process can be setup and carried out without it and the dock is only meant for flexibility and convenience) 
+* Required digital sensors (according to the application; DHT11/22, IR and MQ9 sensors were used in this project)
 * Connecting wires
 * Power Source (for standalone operation, else connect to laptop/pc)
 
 The setup using expansion dock and the aforementioned sensors looks similar to this:
+
 ![hardware setup 1](https://user-images.githubusercontent.com/34755328/66306218-b535bf80-e91e-11e9-9f8d-ab5a06f5f714.png) 
+
 ![hardware setup 2](https://user-images.githubusercontent.com/34755328/66306494-705e5880-e91f-11e9-986d-792b7813d98c.png)
 ## Software Requirements
 * OnionOS (which is up-to-date)
